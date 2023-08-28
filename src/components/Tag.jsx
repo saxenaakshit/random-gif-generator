@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import axios from "axios";
 import Spinner from "./Spinner";
-import useGif from "../hooks/useGif";
+
 
 
  const Tag = () => {
@@ -20,6 +20,7 @@ import useGif from "../hooks/useGif";
      setLoading(false);
     }
 
+    
     useEffect( ()=> {
       fetchData();
     },[])
@@ -49,7 +50,7 @@ import useGif from "../hooks/useGif";
       />
      
       <button 
-      className="w-10/12 bg-yellow-500 text-lg py-2 rounded-lg mb-[20px]"
+      className="w-10/12 bg-yellow-500 text-lg py-2 rounded-lg mb-[20px] text-stone-700"
       onClick={clickHandler}>
         GENERATE
       </button>
