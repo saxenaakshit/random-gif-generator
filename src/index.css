@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* css background-image generated using https://10015.io/tools/css-background-pattern-generator */
+.background {
+  background-image: radial-gradient(#ffffff 2.5px, transparent 2.5px), radial-gradient(#ffffff 2.5px, transparent 2.5px);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
+  background-color: #b1d2ff;
+}
+
+
+/* css loader generated using https://10015.io/tools/css-loader-generator */
+.custom-loader {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   border: 8px solid #0000;
+   border-right-color: #766DF497;
+   position: relative;
+   animation: s4 1s infinite linear;
+ }
+ .custom-loader:before,
+ .custom-loader:after {
+   content: "";
+   position: absolute;
+   inset:-8px;
+   border-radius: 50%;
+   border:inherit;
+   animation:inherit;
+   animation-duration: 2s;
+ }
+ .custom-loader:after {
+   animation-duration: 4s;
+ }
+ 
+ @keyframes s4 {
+   100% {transform: rotate(1turn)}
+ }
