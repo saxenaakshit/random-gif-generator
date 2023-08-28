@@ -3,31 +3,33 @@ import axios from "axios";
 import Spinner from "./Spinner";
 import useGif from "../hooks/useGif";
 
-const API_KEY=process.env.REACT_APP_GIPHY_API_KEY;
- const Tag = () => {
 
+ const Tag = () => {
+  const API_KEY=`AIzaSyBlC206bi6ua-r1g06S3U_C1pyfoqU70Dg`;
     const [tag,setTag] =useState('');
-    // const [gif,setGif]=useState('');
-    // const [loading,setLoading]=useState('false');
+    const [gif,setGif]=useState('');
+    const [loading,setLoading]=useState('false');
     
 
-    // async function fetchData() {
-    //   setLoading(true);
-    //   const url= `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${tag}`; 
-    //  const {data} = await axios.get(url);
-    //  const imageSource = data.data.images.downsized_large.url;
-    //  setGif(imageSource);
-    //  setLoading(false);
-    // }
+    async function fetchData(a) {
+      setLoading(true);
+      const url= `https://tenor.googleapis.com/v2/search?q=${tag}&key=${API_KEY}&client_key=random-gif-generator&limit=20`; 
+     const {data} = await axios.get(url);
+     const imageSource = data.results[a].media_formats.gif.url;
+     setGif(imageSource);
+     setLoading(false);
+    }
 
-    // useEffect( ()=> {
-    //   fetchData();
-    // },[])
+    useEffect( ()=> {
+      fetchData();
+    },[])
 
-    const {gif,loading,fetchData}=useGif(tag);
+    //const {gif,loading,fetchData}=useGif(tag);
 
     function clickHandler(){
-      fetchData();
+      let a=Math.floor(Math.random() 
+                * (20 - 0 + 1)) + 0;
+      fetchData(a);
     }
    
 
