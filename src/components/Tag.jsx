@@ -6,7 +6,7 @@ import useGif from "../hooks/useGif";
 
  const Tag = () => {
   const API_KEY=`AIzaSyBlC206bi6ua-r1g06S3U_C1pyfoqU70Dg`;
-    const [tag,setTag] =useState('');
+    const [tag,setTag] =useState('hello');
     const [gif,setGif]=useState('');
     const [loading,setLoading]=useState('false');
     
